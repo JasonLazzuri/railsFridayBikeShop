@@ -1,3 +1,11 @@
-<h1>Welcome, <%= @user.email %></h1>
+<h3>Here are all the products!!</h3>
 
-<h3>Here are all your photos!</h3>
+<% @products.each do |product| %>
+  <%= image_tag product.image.url %>
+  <p><%=link_to product.name, product_path(product) %></p>
+
+
+
+<% end %>
+
+<%= link_to 'Add New Product', new_product_path(@product) %>

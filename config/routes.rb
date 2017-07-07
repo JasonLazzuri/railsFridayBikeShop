@@ -1,17 +1,10 @@
 Rails.application.routes.draw do
-root :to => 'welcome#index'
-
-  get 'products/new'
-
-  get 'products/index'
-
-  get 'products/edit'
-
-  get 'products/show'
-
-
-
   devise_for :users
 
+root :to => 'welcome#index'
 
+resources :products do
+  resources :reviews do
+    end
+  end
 end
