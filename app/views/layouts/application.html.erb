@@ -17,12 +17,16 @@
           <li><a href="#">Contact Me</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="/users/sign_up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-          <li><a href="/users/sign_in"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+
+          <% if current_user %>
+           <%= current_user.email %> | <%= link_to "Sign out", '/users/sign_out', :method => :delete %>
+          <% else %>
+           <%= link_to "Sign up", '/users/sign_up' %> | <span class="glyphicon glyphicon-log-in"></span><%= link_to "Sign in", '/users/sign_in' %>
+          <% end %>
+
         </ul>
-  </div>
-</nav>
-</div>
+      </div>
+    </nav>
   <body>
     <%= yield %>
   </body>

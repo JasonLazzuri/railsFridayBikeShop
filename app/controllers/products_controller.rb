@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   end
 
   def index
+    @user = current_user
   end
 
   def edit
@@ -10,4 +11,10 @@ class ProductsController < ApplicationController
 
   def show
   end
+
+end
+
+private
+def products_params
+  params.require(:products).permit(:name, :description, :image, current_user)
 end
