@@ -13,8 +13,7 @@
           <a class="navbar-brand" href="/">Bicyle Shop Name</a>
         </div>
         <ul class="nav navbar-nav">
-          <li><a href="products">Products</a></li>
-          <li><a href="#">Contact Me</a></li>
+          <li><a href="/products">Products</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
 
@@ -28,6 +27,16 @@
       </div>
     </nav>
   <body>
-    <%= yield %>
+    <% if notice %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
+
+    <div class="container">
+      <%= yield %>
+
+    </div>
   </body>
 </html>

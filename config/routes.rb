@@ -8,10 +8,7 @@ Rails.application.routes.draw do
 root :to => 'welcome#index'
 
 resources :products do
-  resources :reviews do
-    resources :users do
+  resources :reviews
 
-      end
-    end
   end
 end

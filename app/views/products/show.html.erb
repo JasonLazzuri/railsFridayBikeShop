@@ -4,8 +4,10 @@
 <%= image_tag @product.image %>
 <p><%= @product.description %></p>
 
-<%= link_to 'See Reviews', product_reviews_path(@product) %>
+<%= link_to 'See Reviews', product_reviews_path(@product,@review) %>
 <br>
 
-<%= link_to 'Add Review', new_product_review_path(@product) %>
+<%= link_to 'Add Review', new_product_review_path(@product,@review) %>
 </div>
+<br>
+<br>

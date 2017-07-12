@@ -1,5 +1,15 @@
 <div class="container">
-
-<p><%= @review.content %> </p>
+<h3>Here are all the Reviews for this product!</h3>
+<br>
+<hr>
+<% if @review.any? %>
+<% @review.each do |review| %>
+<p><%= link_to review.content, product_review_path(@product,review.id) %> </p>
+<br>
+<hr>
+<% end %>
+<% else %>
+<p>There are no reviews yet!</p>
+<% end %>
 
 </div>

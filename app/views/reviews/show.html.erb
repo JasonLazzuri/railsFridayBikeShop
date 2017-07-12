@@ -1,2 +1,6 @@
-<h1>Reviews#show</h1>
-<p>Find me in app/views/reviews/show.html.erb</p>
+<h1>Review Page</h1>
+<%= @review.content  %>
+
+<br>
+<hr>
+<%= link_to 'Delete Review',  product_review_path(@product), :data => {:confirm => "Are you sure?",                                           :method => "delete"}, :class=>"btn btn-danger"%>
