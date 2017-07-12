@@ -5,8 +5,9 @@
   <p><%=link_to product.name, product_path(product) %></p>
   <hr>
 <% end %>
-
+<% if is_admin?  %>
 <%= link_to 'Add New Product', new_product_path(@product) %>
+<% end %>
 <br>
 <br>
 <br>
