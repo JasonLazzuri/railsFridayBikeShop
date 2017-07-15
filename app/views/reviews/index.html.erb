@@ -2,8 +2,8 @@
 <h3>Here are all the Reviews for this product!</h3>
 <br>
 <hr>
-<% if @review.any? %>
-<% @review.each do |review| %>
+<% if @reviews.any? %>
+<% @reviews.each do |review| %>
 <p><%= link_to review.content, product_review_path(@product,review.id) %> </p>
 <br>
 <hr>

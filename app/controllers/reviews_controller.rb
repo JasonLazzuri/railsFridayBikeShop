@@ -2,20 +2,19 @@ class ReviewsController < ApplicationController
 
   def index
     @product = Product.find(params[:product_id])
-    @review = @product.reviews.all
+    @reviews = @product.reviews.all
   end
 
   def new
-    @review = Review.new
     @product = Product.find(params[:product_id])
-    @user = current_user
+    @review = Review.new
   end
 
   def create
     @product = Product.find(params[:product_id])
     @review = @product.reviews.new(review_params)
-    current_user.reviews.push(@review)
     @review.save
+      binding.pry
     redirect_to product_reviews_path
   end
 
@@ -35,5 +34,5 @@ class ReviewsController < ApplicationController
 end
 
 def review_params
-  params.require(:review).permit(:content, :product_id,:review_id, :user_id, current_user)
+  params.require(:review).permit(:content, :product_id)
 end
