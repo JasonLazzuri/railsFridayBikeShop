@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
+
   get 'reviews/index'
 
   get 'reviews/show'
 
-  devise_for :users
-
 root :to => 'welcome#index'
+devise_for :users
 
 resources :products do
   resources :reviews
