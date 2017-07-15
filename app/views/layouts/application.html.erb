@@ -18,7 +18,8 @@
         <ul class="nav navbar-nav navbar-right">
 
           <% if current_user %>
-           <%= current_user.email %> | <%= link_to "Sign out", '/users/sign_out', :method => :delete %>
+           <h4 style="margin-top:15px; color:lightgrey;"><%= current_user.email %> | <%= link_to "Sign out", '/users/sign_out', :method => :delete %></h4>
+
           <% else %>
            <%= link_to "Sign up", '/users/sign_up' %> | <span class="glyphicon glyphicon-log-in"></span><%= link_to "Sign in", '/users/sign_in' %>
           <% end %>
